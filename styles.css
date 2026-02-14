@@ -1,8 +1,11 @@
-/*
-
-This CSS file will be included with your plugin, and
-available in the app when your plugin is enabled.
-
-If your plugin does not need CSS, delete this file.
-
-*/
+.otd-tab-parent-folder {
+	color: var(--text-muted);
+	font-size: 0.88em;
+	opacity: 0.9;
+	margin-right: 0.35em;
+	max-width: 12ch;
+	min-width: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
