@@ -109,8 +109,8 @@ export class TabParentFolderLabelService {
 			labelEl.textContent = parentFolderName;
 		}
 
-		if (labelEl.parentElement !== tabHeaderInnerEl || labelEl.nextElementSibling !== titleEl) {
-			tabHeaderInnerEl.insertBefore(labelEl, titleEl);
+		if (labelEl.parentElement !== tabHeaderInnerEl || labelEl.previousElementSibling !== titleEl) {
+			tabHeaderInnerEl.insertBefore(labelEl, titleEl.nextSibling);
 		}
 
 		this.removeDuplicateLabels(tabHeaderInnerEl, labelEl);
