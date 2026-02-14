@@ -1,11 +1,16 @@
 import { Plugin } from "obsidian";
+import { TabParentFolderLabelService } from "./tab-parent-folder-label";
 
 export default class TabDisambiguatorPlugin extends Plugin {
+	private tabParentFolderLabelService: TabParentFolderLabelService | null = null;
+
 	async onload(): Promise<void> {
-		// Wiring is added in the next implementation step.
+		this.tabParentFolderLabelService = new TabParentFolderLabelService(this);
+		this.tabParentFolderLabelService.start();
 	}
 
 	onunload(): void {
-		// Cleanup is added in the next implementation step.
+		this.tabParentFolderLabelService?.stop();
+		this.tabParentFolderLabelService = null;
 	}
 }
