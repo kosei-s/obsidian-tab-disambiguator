@@ -1,7 +1,7 @@
 {
-	"name": "obsidian-sample-plugin",
+	"name": "obsidian-tab-disambiguator",
 	"version": "1.0.0",
-	"description": "This is a sample plugin for Obsidian (https://obsidian.md)",
+	"description": "タブ右側に親フォルダ名を表示して同名ファイルを識別しやすくする。",
 	"main": "main.js",
 	"type": "module",
 	"scripts": {

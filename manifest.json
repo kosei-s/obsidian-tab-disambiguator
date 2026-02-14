@@ -3,9 +3,7 @@
 	"name": "Tab Disambiguator",
 	"version": "1.0.0",
 	"minAppVersion": "0.15.0",
-	"description": "タブ左側に親フォルダ名を表示して同名ファイルを識別しやすくする。",
-	"author": "Obsidian",
-	"authorUrl": "https://obsidian.md",
-	"fundingUrl": "https://obsidian.md/pricing",
+	"description": "タブ右側に親フォルダ名を表示して同名ファイルを識別しやすくする。",
+	"author": "kosei-s",
 	"isDesktopOnly": true
 }
