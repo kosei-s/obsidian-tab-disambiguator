@@ -7,6 +7,7 @@ interface InternalWorkspaceLeaf extends WorkspaceLeaf {
 }
 
 const PARENT_FOLDER_LABEL_CLASS = "otd-tab-parent-folder";
+const HAS_PARENT_FOLDER_LABEL_CLASS = "otd-tab-has-parent-folder-label";
 
 export class TabParentFolderLabelService {
 	private readonly labelByLeaf = new Map<WorkspaceLeaf, HTMLSpanElement>();
@@ -112,6 +113,7 @@ export class TabParentFolderLabelService {
 		if (labelEl.parentElement !== tabHeaderInnerEl || labelEl.previousElementSibling !== titleEl) {
 			tabHeaderInnerEl.insertBefore(labelEl, titleEl.nextSibling);
 		}
+		tabHeaderInnerEl.classList.add(HAS_PARENT_FOLDER_LABEL_CLASS);
 
 		this.removeDuplicateLabels(tabHeaderInnerEl, labelEl);
 	}
@@ -208,6 +210,7 @@ export class TabParentFolderLabelService {
 		strayLabels.forEach((strayLabel) => {
 			strayLabel.remove();
 		});
+		tabHeaderInnerEl.classList.remove(HAS_PARENT_FOLDER_LABEL_CLASS);
 	}
 
 	private removeAllLabels(): void {
@@ -226,6 +229,7 @@ export class TabParentFolderLabelService {
 			labels.forEach((label) => {
 				label.remove();
 			});
+			tabHeaderInnerEl.classList.remove(HAS_PARENT_FOLDER_LABEL_CLASS);
 		});
 	}
 }
