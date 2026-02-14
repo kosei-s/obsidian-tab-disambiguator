@@ -185,11 +185,11 @@ export class TabParentFolderLabelService {
 
 	private removeDuplicateLabels(tabHeaderInnerEl: HTMLElement, keepLabelEl: HTMLSpanElement): void {
 		const labels = tabHeaderInnerEl.querySelectorAll<HTMLSpanElement>(`span.${PARENT_FOLDER_LABEL_CLASS}`);
-		for (const label of labels) {
+		labels.forEach((label) => {
 			if (label !== keepLabelEl) {
 				label.remove();
 			}
-		}
+		});
 	}
 
 	private removeLabel(leaf: WorkspaceLeaf): void {
@@ -205,9 +205,9 @@ export class TabParentFolderLabelService {
 		}
 
 		const strayLabels = tabHeaderInnerEl.querySelectorAll<HTMLElement>(`.${PARENT_FOLDER_LABEL_CLASS}`);
-		for (const strayLabel of strayLabels) {
+		strayLabels.forEach((strayLabel) => {
 			strayLabel.remove();
-		}
+		});
 	}
 
 	private removeAllLabels(): void {
@@ -223,9 +223,9 @@ export class TabParentFolderLabelService {
 			}
 
 			const labels = tabHeaderInnerEl.querySelectorAll<HTMLElement>(`.${PARENT_FOLDER_LABEL_CLASS}`);
-			for (const label of labels) {
+			labels.forEach((label) => {
 				label.remove();
-			}
+			});
 		});
 	}
 }
